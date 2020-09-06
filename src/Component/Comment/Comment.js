@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Comment = (props) => {
-const {name, email, body, id } = props.comment;
+const { body } = props.comment;
 const classes = useStyles();
   
   useEffect(() => {
@@ -33,11 +33,11 @@ const classes = useStyles();
     });
 }, []);
 
-const [ image, setImage ] = useState({
-    name    : '',
-    picture : '',
-    email   : ''
-});
+            const [ image, setImage ] = useState({
+                name    : '',
+                picture : '',
+                email   : ''
+            });
   return (
       
     <List className={classes.root}>
@@ -56,9 +56,11 @@ const [ image, setImage ] = useState({
                 color="textPrimary"
               >
                 {image.email}
+                
               </Typography>
+              <Typography>
               {body}
-              
+              </Typography>
             </React.Fragment>
           }
         />
